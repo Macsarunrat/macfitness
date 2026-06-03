@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-pastel-cream text-pastel-text font-sans antialiased min-h-screen;
+    background-image: 
+      radial-gradient(at 10% 10%, rgba(255, 204, 213, 0.25) 0px, transparent 50%),
+      radial-gradient(at 90% 20%, rgba(243, 232, 255, 0.2) 0px, transparent 50%),
+      radial-gradient(at 50% 90%, rgba(255, 245, 240, 0.3) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background-color: #FFCCD5;
+    color: #4A3E3D;
+  }
+}
+
+/* Custom scrollbars for a clean look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-pastel-pink-dark/40 rounded-full hover:bg-pastel-pink-dark transition-colors;
+}
+
+/* Smooth transitions for navigation */
+.page-transition-enter {
+  opacity: 0;
+  transform: scale(0.98);
+}
+.page-transition-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 250ms ease-out, transform 250ms ease-out;
+}
+.page-transition-exit {
+  opacity: 1;
+}
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 150ms ease-in;
+}
+
+/* Cute card hover helper */
+.cute-card {
+  @apply bg-white/70 backdrop-blur-md border border-pastel-pink-soft/30 rounded-cute p-5 shadow-cute transition-all duration-300 hover:shadow-cute-lg hover:translate-y-[-2px] hover:bg-white/90;
+}
+
+.cute-input {
+  @apply w-full px-4 py-3 bg-white/80 border border-pastel-pink-soft rounded-cute text-pastel-text outline-none transition-all duration-200 focus:border-pastel-pink-deep focus:ring-2 focus:ring-pastel-pink-soft focus:bg-white;
+}
+
+.cute-button-primary {
+  @apply px-6 py-3 bg-pastel-pink-deep hover:bg-pastel-pink-hot active:scale-95 text-white font-semibold rounded-cute shadow-cute transition-all duration-200 flex items-center justify-center gap-2;
+}
+
+.cute-button-secondary {
+  @apply px-6 py-3 bg-pastel-pink-soft/50 hover:bg-pastel-pink-soft active:scale-95 text-pastel-text font-semibold rounded-cute transition-all duration-200 flex items-center justify-center gap-2;
+}
